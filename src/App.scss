@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400;700&display=swap');
+@import './variables.scss';
+
+.App
+{
+  width: 960px;
+  margin: auto;
+  margin-top: 50px;
+  background: #fff;
+  padding: 50px 30px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 10px rgb(218 218 218);
+  font-size: $fontSize;
+  color: $fontColor;
+  font-family: $bodyFont !important;
+}
+
+
+input, button
+{
+  background: transparent;
+  padding:10px;
+  border: 2px solid $logoBlue;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: inherit;
+  font-size: 16px;
+
+  &:focus, &:active
+  {
+    outline: none !important;
+  }
+
+}
+
+button
+{
+  background: $logoBlue;
+  color: #fff;
+  font-weight: 700;
+
+  &.outline
+  {
+    background: #fff;
+    color: #000;
+  }
+
+  &:hover
+  {
+    background: $logoBlueDark;
+  }
+}

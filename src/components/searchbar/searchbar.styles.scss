@@ -1,0 +1,59 @@
+@import '../../App.scss';
+
+.searchbar
+{
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+    width: 60%;
+    margin: 30px auto;
+
+    .search-field
+    {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    .search-button
+    {
+        position: relative;
+        left: -3px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        font-size: 16px;
+        line-height: 20px;
+        line-height: 0px;
+        padding-top: 15px;
+        cursor: pointer;
+    }
+
+    .search-suggestions
+    {
+        margin-top: 5px;
+        border-radius: 4px;
+        border: 2px solid $logoBlue;
+
+        ul
+        {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            
+            li
+            {
+                padding: 5px 10px;
+                border-bottom: 1px solid $logoBlue;
+                cursor: pointer;
+
+                &:hover
+                {
+                    background: $logoBlueLight;
+                }
+            }
+
+            li:last-child
+            {
+                border-bottom: none;
+            }
+        }     
+    }
+}
