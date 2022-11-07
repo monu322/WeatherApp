@@ -1,7 +1,9 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 import './searchbar.styles.scss'
 
 import axios from 'axios';
+
+import { LocationContext } from '../../context/location-context';
 
 type locationType = {
   name: string
@@ -14,32 +16,22 @@ type locationType = {
 export const Searchbar = () => {
 
     let timerId:any = null;
-    const API_KEY = '8601f519a6317c021be8016d0ee1fc24';
+    const API_KEY = process.env.REACT_APP_API_KEY;
+    const units = 'metric'
 
     let regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
 
     const [locations, setLocations] = useState([])
-    const [weather, setWeather] = useState(null)
+    const {location, setLocation} = useContext(LocationContext)
     const [showSuggestions, setShowSuggestions] = useState(false)
 
     const searchFieldRef = useRef<HTMLInputElement>(null)
 
     const locationClick = (location:string)=>{
-      
-      axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&exclude=alerts&appid=${API_KEY}`)
-      .then(function (response) {
-        // handle success
-        console.log(response.data)
 
-        searchFieldRef.current!.value= response.data.name
-        setShowSuggestions(false)
-        setWeather(response.data)
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-
+      setLocation(location);
+      setShowSuggestions(false)
+      searchFieldRef.current!.value= location.split(',')[0]
     }
 
     const handleSearch = (e:React.ChangeEvent<HTMLInputElement>)=>{
@@ -86,8 +78,8 @@ export const Searchbar = () => {
           (locations.length>0 && showSuggestions)?<div className="search-suggestions">
           <ul>
             {
-              locations.map((location: locationType)=>(
-                <li onClick={()=>locationClick(location.name+','+location.state+','+location.country)}>{location.name}, {location.state}, {regionNames.of(location.country)}</li>
+              locations.map(({lat, lon, name, state, country}: locationType)=>(
+                <li key={lat+lon} onClick={()=>locationClick(name+','+state+','+country)}>{name}, {state}, {regionNames.of(country)}</li>
               ))
             }
           </ul>

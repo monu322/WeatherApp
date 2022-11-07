@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import './logo.styles.scss'
 
-export const Logo = () => {
+export const Logo = React.memo(() => {
   return (
     <div className='logo'>
         
     </div>
   )
-}
+})

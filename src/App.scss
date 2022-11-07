@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;700&display=swap');
 @import './variables.scss';
 
 .App
 {
-  width: 960px;
+  max-width: 960px;
   margin: auto;
   margin-top: 50px;
   background: #fff;
-  padding: 50px 30px;
+  padding:35px 0px;
   border-radius: 15px;
   box-shadow: 1px 1px 10px rgb(218 218 218);
   font-size: $fontSize;
@@ -50,4 +50,8 @@ button
   {
     background: $logoBlueDark;
   }
+}
+
+
+@media only screen and (max-width: 960px) {
 }

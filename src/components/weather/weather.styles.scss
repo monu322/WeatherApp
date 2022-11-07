@@ -1,0 +1,75 @@
+@import '../../variables.scss';
+
+.weather-box
+{
+    max-width: 60%;
+    margin: auto;
+    text-align: center;
+
+    h3
+    {
+        margin-bottom: 40px;
+        
+        .city
+        {
+            font-weight: 400;
+            font-size: 50px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .country
+        {
+            font-size: 20px;
+            font-weight: 400;
+        }
+    }
+
+    .weather-data
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .temparature
+        {
+            padding-top: 10px;
+        }
+
+        .actual-temp
+        {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .feels-like
+        {
+            font-size: 16px;
+        }
+
+        .icon-label
+        {
+            font-size: 20px;
+        }
+
+        .icon-img img
+        {
+            width: 100px;
+        }
+    }
+
+    .key-value-row
+    {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $borderGrey;
+        padding: 15px 0px;
+        font-size: 18px;
+    }
+
+    .timeof-record
+    {
+        margin-top: 20px;
+        display: block;
+    }
+
+}
