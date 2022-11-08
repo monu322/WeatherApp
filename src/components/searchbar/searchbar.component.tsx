@@ -90,7 +90,7 @@ export const Searchbar = () => {
         }
 
           {
-            (locations.length===0 && !showSuggestions)?<div className="search-suggestions"><ul><li>Sorry, no results found!</li></ul></div>:''
+            (locations.length===0 && showSuggestions)?<div className="search-suggestions"><ul><li>Sorry, no results found!</li></ul></div>:''
 
           }
     </div>
