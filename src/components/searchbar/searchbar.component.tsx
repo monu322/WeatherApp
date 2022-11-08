@@ -22,7 +22,7 @@ export const Searchbar = () => {
     let regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
 
     const [locations, setLocations] = useState([])
-    const {location, setLocation} = useContext(LocationContext)
+    const {setLocation} = useContext(LocationContext)
     const [showSuggestions, setShowSuggestions] = useState(false)
 
     const searchFieldRef = useRef<HTMLInputElement>(null)
@@ -88,6 +88,11 @@ export const Searchbar = () => {
         </div>:''
 
         }
+
+          {
+            (locations.length===0)?<div className="search-suggestions"><ul><li>Sorry, no results found!</li></ul></div>:''
+
+          }
     </div>
   )
 }
