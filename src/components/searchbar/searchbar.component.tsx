@@ -48,6 +48,9 @@ export const Searchbar = () => {
           e.target.value!=='' && axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${e.target.value}&limit=10&appid=${API_KEY}`)
           .then(function (response) {
             // handle success
+
+            console.log('api response', response.data)
+
             setShowSuggestions(true)
             setLocations(response.data)
           })
