@@ -25,7 +25,6 @@ export const Searchbar = () => {
     const {setLocation} = useContext(LocationContext)
 
     const [showSuggestions, setShowSuggestions] = useState(false)
-    const [showSuggestionsError, setShowSuggestionsError] = useState(false)
 
     const searchFieldRef = useRef<HTMLInputElement>(null)
 
@@ -34,7 +33,6 @@ export const Searchbar = () => {
       localStorage.setItem("location", location);
       setLocation(location);
       setShowSuggestions(false)
-      setShowSuggestionsError(false)
       searchFieldRef.current!.value= location.split(',')[0]
     }
 
@@ -51,7 +49,7 @@ export const Searchbar = () => {
           e.target.value!=='' && axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${e.target.value}&limit=10&appid=${API_KEY}`)
           .then(function (response) {
             // handle success
-            setShowSuggestionsError(response.data.length>0?false:true)
+            setShowSuggestions(true)
             setLocations(response.data)
           })
           .catch(function (error) {
@@ -88,11 +86,6 @@ export const Searchbar = () => {
         </div>:''
 
         }
-
-          {
-            (locations.length===0 && showSuggestionsError)?<div className="search-suggestions"><ul><li>Sorry, no results found!</li></ul></div>:''
-
-          }
     </div>
   )
 }
