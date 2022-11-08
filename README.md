@@ -8,6 +8,18 @@ Live URL : https://weather-app-monu322.vercel.app/
 
 In the project directory, you can run:
 
+
+### `npm install`
+
+Installs all required dependencies
+
+### Add .env file
+
+Add a .env file to the root folder with the API key
+
+REACT_APP_API_KEY={API_KEY}
+
+
 ### `npm start`
 
 Runs the app in the development mode.\
