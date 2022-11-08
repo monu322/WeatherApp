@@ -77,7 +77,7 @@ export const Searchbar = () => {
         <button className='search-button'>Find</button>
 
         {
-          (locations.length>0 && showSuggestions && location!=='')?<div className="search-suggestions">
+          (locations.length>0)?<div className="search-suggestions">
           <ul>
             {
               locations.map(({lat, lon, name, state, country}: locationType)=>(
@@ -85,7 +85,7 @@ export const Searchbar = () => {
               ))
             }
           </ul>
-        </div>:showSuggestions?(<div className="search-suggestions"><ul><li>Sorry, no results found!</li></ul></div>):''
+        </div>:''
 
         }
     </div>
