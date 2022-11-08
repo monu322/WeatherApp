@@ -77,7 +77,7 @@ export const Searchbar = () => {
         <button className='search-button'>Find</button>
 
         {
-          (locations.length>0)?<div className="search-suggestions">
+          (locations.length>0 && showSuggestions)?<div className="search-suggestions">
           <ul>
             {
               locations.map(({lat, lon, name, state, country}: locationType)=>(
