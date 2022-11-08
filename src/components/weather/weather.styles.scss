@@ -72,4 +72,25 @@
         display: block;
     }
 
+    .units
+    {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 40px;
+
+        button
+        {
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 400;
+            padding:5px 10px;
+        }
+    }
+
+    &.error
+    {
+        font-size: 30px;
+        font-weight: 300;
+        color: $warningOrange;
+    }
 }

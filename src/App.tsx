@@ -9,8 +9,9 @@ import { LocationContext } from './context/location-context';
 
 function App() {
 
-  const [location, setLocation] = useState('')
-  const [units, setUnits] = useState('metric')
+  //check local storage for location, if null store empty string in location state, if not empty store to context
+  let storedLocation = localStorage.getItem("location");
+  const [location, setLocation] = useState(storedLocation?storedLocation:'')
 
   return (
     <div className="App">

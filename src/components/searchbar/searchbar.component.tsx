@@ -28,7 +28,8 @@ export const Searchbar = () => {
     const searchFieldRef = useRef<HTMLInputElement>(null)
 
     const locationClick = (location:string)=>{
-
+      //persisting location with localstorage
+      localStorage.setItem("location", location);
       setLocation(location);
       setShowSuggestions(false)
       searchFieldRef.current!.value= location.split(',')[0]
@@ -42,13 +43,11 @@ export const Searchbar = () => {
 
         // start a new timer and make the api call
 	      timerId  =  setTimeout(()=>{
-          console.log(e.target.value)
 
-          // Make a request for city names with user query
-          axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${e.target.value}&limit=10&appid=${API_KEY}`)
+          // Make a request for city names with user query if search field is not empty
+          e.target.value!=='' && axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${e.target.value}&limit=10&appid=${API_KEY}`)
           .then(function (response) {
             // handle success
-            console.log(response.data)
             setShowSuggestions(true)
             setLocations(response.data)
           })
@@ -75,7 +74,7 @@ export const Searchbar = () => {
         <button className='search-button'>Find</button>
 
         {
-          (locations.length>0 && showSuggestions)?<div className="search-suggestions">
+          (locations.length>0 && showSuggestions && location!=='')?<div className="search-suggestions">
           <ul>
             {
               locations.map(({lat, lon, name, state, country}: locationType)=>(
@@ -83,8 +82,8 @@ export const Searchbar = () => {
               ))
             }
           </ul>
-        </div>:''
-          
+        </div>:showSuggestions?(<div className="search-suggestions"><ul><li>Sorry, no results found!</li></ul></div>):''
+
         }
     </div>
   )

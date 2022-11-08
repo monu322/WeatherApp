@@ -43,7 +43,20 @@ button
   &.outline
   {
     background: #fff;
-    color: #000;
+    color: $logoBlueDark;
+
+    &:hover
+    {
+      color: #fff;
+    }
+
+    &.active
+    {
+      color: #fff;
+      background: $logoBlue;
+      text-shadow: rgba(0,0,0,0.8) 0px 0px 3px;
+    }
+
   }
 
   &:hover
