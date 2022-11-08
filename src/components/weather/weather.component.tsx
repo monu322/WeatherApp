@@ -3,7 +3,7 @@ import { LocationContext } from '../../context/location-context';
 import './weather.styles.scss'
 
 import axios from 'axios';
-
+import { WiSunrise, WiSunset, WiStrongWind, WiHumidity, WiSmallCraftAdvisory, WiCloudy, WiRain } from "react-icons/wi";
 
 export const Weather = () => {
 
@@ -125,39 +125,39 @@ export const Weather = () => {
         {
             weather.rain?(
                 <div className="key-value-row">
-                    <span className='label'>Rain</span>
+                    <span className='label'><WiRain/> Rain</span>
                     <span className='value'>{weather.rain['1h']}mm</span>
                 </div>
             ):''
         }
 
         <div className="key-value-row">
-            <span className='label'>Sunrise</span>
+            <span className='label'><WiSunrise className='wicon'/> Sunrise</span>
             <span className='value'>{sunriseTime}</span>
         </div>
 
         <div className="key-value-row">
-            <span className='label'>Sunset</span>
+            <span className='label'><WiSunset className='wicon'/> Sunset</span>
             <span className='value'>{sunsetTime}</span>
         </div>
 
         <div className="key-value-row">
-            <span className='label'>Wind</span>
+            <span className='label'><WiStrongWind className='wicon'/> Wind</span>
             <span className='value'>{weather.wind.speed}{speedUnit}</span>
         </div>
 
         <div className="key-value-row">
-            <span className='label'>Visibility</span>
+            <span className='label'><WiSmallCraftAdvisory className='wicon'/> Visibility</span>
             <span className='value'>{weather.visibility}m</span>
         </div>
 
         <div className="key-value-row">
-            <span className='label'>Humidity</span>
+            <span className='label'><WiHumidity className='wicon'/> Humidity</span>
             <span className='value'>{weather.main.humidity}%</span>
         </div>
 
         <div className="key-value-row">
-            <span className='label'>Cloudiness</span>
+            <span className='label'><WiCloudy className='wicon'/> Cloudiness</span>
             <span className='value'>{weather.clouds.all}%</span>
         </div>
 

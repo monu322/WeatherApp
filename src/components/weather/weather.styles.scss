@@ -64,6 +64,15 @@
         border-bottom: 1px solid $borderGrey;
         padding: 15px 0px;
         font-size: 18px;
+        align-items: center;
+
+        .wicon
+        {
+            font-size: 30px;
+            position: relative;
+            top: 10px;
+            margin-right: 5px;
+        }
     }
 
     .timeof-record
