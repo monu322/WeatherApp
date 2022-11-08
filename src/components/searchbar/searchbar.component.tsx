@@ -45,7 +45,7 @@ export const Searchbar = () => {
 	      timerId  =  setTimeout(()=>{
 
           // Make a request for city names with user query if search field is not empty
-          e.target.value!=='' && axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${e.target.value}&limit=10&appid=${API_KEY}`)
+          e.target.value!=='' && axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${e.target.value}&limit=10&appid=${API_KEY}`)
           .then(function (response) {
             // handle success
             setShowSuggestions(true)

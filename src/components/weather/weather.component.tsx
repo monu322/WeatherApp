@@ -118,7 +118,7 @@ export const Weather = () => {
 
             <div className="icon">
                 <div className="icon-label">{weather.weather[0].main}</div>
-                <div className="icon-img"><img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}/></div>
+                <div className="icon-img"><img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}/></div>
             </div>
         </div>
 
