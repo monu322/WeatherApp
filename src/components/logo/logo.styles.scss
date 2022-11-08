@@ -6,3 +6,15 @@
     background-size: cover;
     margin: auto;
 }
+
+@media only screen and (max-width: 450px) {
+    .logo
+    {
+        background: url('../../assets/icon.png') no-repeat;
+        width: 95px;
+        height: 95px;
+        background-size: cover;
+        margin: auto;
+    }
+
+}

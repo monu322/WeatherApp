@@ -103,3 +103,51 @@
         color: $warningOrange;
     }
 }
+
+@media only screen and (max-width: 450px) {
+    .search-button
+    {
+        display: none;
+    }
+
+    .searchbar
+    {
+        grid-template-columns: unset;
+    }
+
+    .search-field
+    {
+        border-top-right-radius: 4px !important;
+        border-bottom-right-radius: 4px !important;
+        width: 90%;
+    }
+
+    .weather-box
+    {
+        .weather-data
+        {
+            grid-template-columns: unset;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .key-value-row
+        {
+            flex-direction: column;
+
+            .wicon
+            {
+                display: block;
+                margin-right: 0px;
+                margin-bottom: 15px;
+                left: 10px;
+            }
+
+            .value
+            {
+                margin-top: 15px;
+                font-size: 25px;
+            }
+        }
+    }
+
+}
