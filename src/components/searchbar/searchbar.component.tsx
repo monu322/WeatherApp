@@ -17,7 +17,7 @@ export const Searchbar = () => {
 
     let timerId:any = null;
     const API_KEY = process.env.REACT_APP_API_KEY;
-    const units = 'metric'
+
 
     let regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
 

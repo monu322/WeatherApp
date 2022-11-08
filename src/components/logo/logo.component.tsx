@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import './logo.styles.scss'
 
 export const Logo = React.memo(() => {
